@@ -67,29 +67,3 @@ export default function SensorList()
 
 
 
-
-
-/*
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDyDLOrd0VTMMhb42yDIlfQeTbEv58N3Lk",
-  authDomain: "smart-farm-f342a.firebaseapp.com",
-  databaseURL: "https://smart-farm-f342a-default-rtdb.firebaseio.com",
-  projectId: "smart-farm-f342a",
-  storageBucket: "smart-farm-f342a.appspot.com",
-  messagingSenderId: "505874007318",
-  appId: "1:505874007318:web:aef94dc5baedd0a0017c37",
-  measurementId: "G-BEZR2EWP4Q"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-*/
