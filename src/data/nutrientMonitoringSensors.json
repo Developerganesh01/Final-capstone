@@ -1,0 +1,56 @@
+[
+  {
+    "href": "ph-sensor",
+    "title": "PH Sensor",
+    "description": "Used to measure the acidity or alkalinity...",
+    "valueId": "ph-value",
+    "dataAttribute": "ph-sensor",
+    "dataValue": "View PH Sensor's Data",
+    "collection":"phmodels"
+  },
+  {
+    "href": "tds-sensor",
+    "title": "TDS Sensor",
+    "description": "Measures the total dissolved solids in water with a range of 0 to 1000 ppm.",
+    "valueId": "tds-value",
+    "dataAttribute": "tds-sensor",
+    "dataValue": "View TDS Sensor's Data",
+    "collection":"tdsmodels"
+  },
+  {
+    "href": "ultrasonic-sensor",
+    "title": "Ultrasonic Sensor",
+    "description": "Measuring distance",
+    "valueId": "ultrasonic-value",
+    "dataAttribute": "ultrasonic-sensor",
+    "dataValue": "View Ultrasonic Sensor's Data",
+    "collection":"ultrasonicmodels"
+  },
+  {
+    "href": "temperature-sensor",
+    "title": "Temperature Sensor",
+    "description": "Measures water's temperature",
+    "valueId": "temperature-value",
+    "dataAttribute": "temperature-sensor",
+    "dataValue": "View Temperature Sensor's Data",
+    "collection":"temperaturemodels"
+  },
+  {
+    "href": "water-flow-meter",
+    "title": "Water Flow Meter",
+    "description": "Measures the quantity of water flown through it",
+    "valueId": "water-flow-value",
+    "dataAttribute": "water-flow-sensor",
+    "dataValue": "View Water-flow Sensor's Data",
+    "collection":"phmodels"
+  },
+  {
+    "href": "dissolve-oxygen-sensor",
+    "title": "Dissolve Oxygen Sensor",
+    "description": "Measures oxygen pressure in the tank",
+    "valueId": "dissolve-oxygen-value",
+    "dataAttribute": "dissolve-oxygen-sensor",
+    "dataValue": "View Dissolve oxygen Sensor's Data",
+    "collection":"phmodels"
+  }
+]

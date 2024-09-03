@@ -1,0 +1,79 @@
+.listcontainer {
+  margin: 2rem;
+  margin-top: 5rem;
+  height: 75vh;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  justify-content: space-around;
+  align-items: flex-start; /* Align items at the top */
+  background-color: #f0f4c3; /* Softer green for background */
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.sensorcontainer {
+  border: 0.1rem solid #c5e1a5; /* Light green border */
+  height: 20rem;
+  font-size: 1.5rem; /* Slightly smaller font for better fit */
+  margin: 1rem;
+  border-radius: 1rem;
+  width: 30%;
+  background-color: #ffffff; /* White background for contrast */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+}
+
+.sensorcontainer:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.sensorcontainer > a, 
+.sensorcontainer > a:active, 
+.sensorcontainer > a:link,
+.sensorcontainer > a:visited {
+  text-decoration: none;
+  color: #33691e; /* Dark green text color for better readability */
+}
+
+.sensordetailbox {
+  background-color: #d1c4e9; /* Soft purple background */
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  color: #1b5e20; /* Dark green text color */
+  text-transform: capitalize;
+  border-radius: 0.5rem; /* Rounded corners inside the container */
+}
+
+.sensorheadingbox, 
+.sensorvaluebox {
+  width: 48%;
+  background-color: #81c784; /* Light green for sub-boxes */
+  margin: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.5rem; /* Rounded corners for sub-boxes */
+  color: #004d40; /* Darker text color */
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin: 0.1rem;
+  background-color: #e57373; /* Soft red for the show button */
+  border: 0.3rem solid #b71c1c; /* Darker red border */
+  border-radius: 1rem;
+  padding: 0.5rem;
+  color: #ffffff; /* White text color for contrast */
+}

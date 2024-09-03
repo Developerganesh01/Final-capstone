@@ -1,0 +1,9 @@
+.graphcontainer{
+  width: 100%;
+  height: 80vh;
+  background-color: aqua;
+  margin-top: 1%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}

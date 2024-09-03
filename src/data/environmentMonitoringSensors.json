@@ -1,0 +1,29 @@
+[
+  {
+    "href": "co2-sensor",
+    "title": "CO2 Gas Sensor",
+    "description": "Measures the concentration of CO2 gas in the air",
+    "valueId": "co2-value",
+    "dataAttribute": "co2-sensor",
+    "dataValue": "View Conc of CO2 Sensor's Data",
+    "collection":"co2models"
+  },
+  {
+    "href": "oxygen-sensor",
+    "title": "Oxygen Gas Sensor",
+    "description": "Measures the concentration of oxygen gas in the air",
+    "valueId": "oxygen-value",
+    "dataAttribute": "oxygen-sensor",
+    "dataValue": "View Conc of Oxygen Sensor's Data",
+    "collection":"oxygenmodels"
+  },
+  {
+    "href": "barometric-sensors",
+    "title": "BMP180 Barometric Sensor",
+    "description": "Measures atmospheric pressure",
+    "valueId": "barometric-value",
+    "dataAttribute": "pressure-sensor",
+    "dataValue": "View Atmospheric Pressure Sensor's Data",
+    "collection":"phmodels"
+  }
+]
