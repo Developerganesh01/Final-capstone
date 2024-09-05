@@ -68,7 +68,7 @@ export default function Sensorgraph() {
 
   return (
     <div className={styles.graphcontainer}>
-      {loading ? <p>Loading....</p> : <Graph data={data} />}
+      {loading ? <p>Loading....</p> : <Graph data={data} path={params.type} />}
     </div>
   );
 }

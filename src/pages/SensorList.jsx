@@ -35,7 +35,7 @@ export default function SensorList()
        const newlist=list.default.map(item=>
         (
           <div className={styles.sensorcontainer}>
-            <Link to={`/${params.type}/${item.collection}`}>
+            <Link to={`/${item.href}/${item.collection}`}>
               <Sensor title={item.href}/>
             </Link>
          </div>
