@@ -1,8 +1,8 @@
 import { useState,useEffect } from "react";
 import styles from "../pages/styles/sensorList.module.css";
 import db  from "../firebase";
-import { collection, doc,onSnapshot } from "firebase/firestore";
-
+//import { collection, doc,onSnapshot } from "firebase/firestore";
+import {ref,onValue,off } from "firebase/database";
 
 export default function Sensor({title})
 {
@@ -11,9 +11,10 @@ export default function Sensor({title})
 
   const path=title;
   useEffect(() => {
-
-    const unsubscribe=onSnapshot(doc(db,"sensors",path),(doc)=>{
-      const newValue=doc.data()?doc.data().value:null;
+    const sensorRef=ref(db,'sensors/'+path);
+    onValue(sensorRef,(snapshot)=>{
+      // console.log(snapshot.val());
+      const newValue=snapshot.val()?snapshot.val().value:null;
       if(sensorValue !== newValue)
       {
         setMsg(`${title} value changed from ${sensorValue} to ${newValue}`)
@@ -26,7 +27,7 @@ export default function Sensor({title})
     })
 
     return () => {
-      unsubscribe();
+      off(sensorRef);
     };
   }, [path]); 
   return (

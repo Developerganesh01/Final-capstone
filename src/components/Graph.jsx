@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import * as echarts from 'echarts';
-import { onSnapshot, doc } from "firebase/firestore";
+// import { onSnapshot, doc } from "firebase/firestore";
 import db from "../firebase";
-
+import {ref,onValue,off} from "firebase/database";
 export default function Graph({ data, path }) {
   const chartRef = useRef(null);
   const dataX = [];
@@ -10,15 +10,15 @@ export default function Graph({ data, path }) {
 
   useEffect(() => {
     const myChart = echarts.init(chartRef.current);
-
-    const unsubscribe = onSnapshot(doc(db, "sensors", path), (doc) => {
-      if (doc.data()) {
+    const sensorRef=ref(db,"sensors/"+path);
+    onValue(sensorRef, (snapshot) => {
+      if (snapshot.val()) {
         const newTime = new Date();
         dataX.push(newTime);
-        const newValue = doc.data().value;
+        const newValue = snapshot.val().value;
         dataY.push(newValue);
 
-        if (dataX.length > 50) {
+        if (dataX.length > 100) {
           dataX.shift();
           dataY.shift();
         }
@@ -74,7 +74,7 @@ export default function Graph({ data, path }) {
       }
     });
     return () => {
-      unsubscribe();
+      off(sensorRef);
       if (myChart) {
         myChart.dispose();
       }
