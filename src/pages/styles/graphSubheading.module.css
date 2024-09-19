@@ -1,0 +1,51 @@
+.subheading{
+  width: 100%;
+  min-height: 5rem;
+  padding: 0.2rem;
+  display: flex;
+  justify-content: end;
+  list-style: none;
+  padding-right: 3rem;
+}
+.subheading li{
+  margin-right: 3rem;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-weight: bold;
+}
+.subheading li a:link,
+.subheading li a:visited
+{
+  text-decoration: none;
+  color:black;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  transition: all 2s ease-out; 
+}
+.subheading li a.active-btn {
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 0.5rem;
+  border-bottom: none; /* Remove the default border */
+}
+
+.subheading li a.active-btn::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.3rem;
+  width: 0;
+  background-color: #7ed56f;
+  animation:borderGrow 0.5s forwards ease-out;
+}
+
+@keyframes borderGrow{
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 100%;
+  }
+}

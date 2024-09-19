@@ -1,16 +1,17 @@
 import { useEffect, useRef } from "react";
 import * as echarts from 'echarts';
-// import { onSnapshot, doc } from "firebase/firestore";
 import db from "../firebase";
 import {ref,onValue,off} from "firebase/database";
-export default function Graph({ data, path }) {
+
+export default function Graph({firebaseRTDBPath}) {
+
   const chartRef = useRef(null);
   const dataX = [];
   const dataY = [];
 
   useEffect(() => {
     const myChart = echarts.init(chartRef.current);
-    const sensorRef=ref(db,"sensors/"+path);
+    const sensorRef=ref(db,"sensors/"+firebaseRTDBPath);
     onValue(sensorRef, (snapshot) => {
       if (snapshot.val()) {
         const newTime = new Date();
@@ -46,7 +47,7 @@ export default function Graph({ data, path }) {
           },
           yAxis: {
             type: 'value',
-            name: `${path}`,
+            name: `${firebaseRTDBPath}`,
             position: 'left',
             axisLabel: { formatter: '{value}', color: '#888' },  
             splitLine: {
@@ -55,7 +56,7 @@ export default function Graph({ data, path }) {
           },
           series: [
             {
-              name: `${path}`,
+              name: `${firebaseRTDBPath}`,
               type: 'line',
               smooth: false, 
               data: dataY.map((y, index) => [dataX[index], y]),  
@@ -79,13 +80,15 @@ export default function Graph({ data, path }) {
         myChart.dispose();
       }
     };
-  }, [path]);
+  }, [firebaseRTDBPath]);
 
   return (
+    <>
     <div
       id="echart-graph-container"
       ref={chartRef}
-      style={{ height: "75vh", width: "100%" }}
+      style={{ height: "75vh", width: "100vw" }}
     ></div>
+    </>
   );
 }
