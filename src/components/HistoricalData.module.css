@@ -1,0 +1,48 @@
+
+.historicaldata-container{
+  width: 98vw;
+  min-height: 85vh;
+  border: 0.1rem solid black;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.historicaldata-container__heading{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 0.5rem;
+  padding-left: 15rem;
+  margin: 1rem;
+  color: #fff;
+  background-color: #294798;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.historicaldata-container__input-div{
+  padding: 1rem;
+  /* border: 0.2rem solid greenyellow; */
+  margin-left: 1rem;
+}
+.historicaldata-container__graph-div{
+  margin: 1rem;
+  min-height: 65vh;
+  position: relative;
+}
+.download-btn{
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.4rem;
+  margin: 1rem;
+}
+.fetch-btn{
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  margin-left: 2rem;
+  transition: all 0.2s;
+  text-transform:capitalize;
+}
+.fetch-btn:hover{
+  transform: scale(1.2);
+}
