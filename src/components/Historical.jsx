@@ -1,9 +1,10 @@
 import { useEffect,useState } from "react";
 import styles from "./HistoricalData.module.css";
 import HistoricalGraph from "./HistoricalGraph";
+import {v4 as uuidv4} from "uuid";
 function Historical()
 {
-  const[sensorDataList,setSensorDataList]=useState("");
+  const[sensorDataList,setSensorDataList]=useState([]);
   const [startDate,setStartDate]=useState("");
   const[endDate,setEndDate]=useState("");
   
@@ -36,7 +37,6 @@ function Historical()
       });
       const data=await response.json();
       setSensorDataList(data.obj);
-      console.log(data.obj);
     }
     catch(err)
     {
@@ -55,6 +55,30 @@ function Historical()
       console.log(err);
     }
   }
+  function handleDownload()
+  {
+    //[{},{}]
+    if(sensorDataList.length===0)return;
+    const keys=Object.keys(sensorDataList[0]);
+    const headRow=keys.join(",");
+   // console.log(headRow);
+    const dataRow=[];
+    sensorDataList.map((obj)=>{
+      const valueArr=Object.values(obj);
+      dataRow.push(valueArr.join(","));
+    });
+    const totalRowData=[headRow,...dataRow];
+    const csvstring=totalRowData.join("\n");
+    //console.log(csvstring);
+    const csvBlobObject=new Blob([csvstring],{type:"text/csv"});
+    //console.log(csvBlobObject);
+    const url = URL.createObjectURL(csvBlobObject);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${uuidv4()}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
   return (
     <div className={styles["historicaldata-container"]}>
       <div className={styles["historicaldata-container__heading"]}>
@@ -70,7 +94,7 @@ function Historical()
       </div>
       <div className={styles["historicaldata-container__graph-div"]}>
         {!sensorDataList || sensorDataList.length===0?"no data found...":<HistoricalGraph data={sensorDataList}/>}
-        <button className={styles["download-btn"]}>Download(.csv)</button>
+        <button className={styles["download-btn"]} onClick={handleDownload}>Download(.csv)</button>
       </div>
     </div>
   )
