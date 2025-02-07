@@ -25,7 +25,7 @@ function Historical()
   async function getData(sd,ed)
   {
     try{
-      const response=await fetch("http://localhost:5050/ph-sensor/gethistoricaldata",{
+      const response=await fetch(`${process.env.REACT_APP_CAPSTONEBACKEDNBASEURL}/ph-sensor/gethistoricaldata`,{
         method:"POST",
         headers:{
           'Content-Type':'application/json'

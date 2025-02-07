@@ -6,6 +6,7 @@ import Contact from './pages/Contact';
 import styles from './App.module.css';
 import SensorList from './pages/SensorList';
 import Sensorgraph from './pages/Sensorgraph';
+import Control from "./pages/Control";
 
 function App() {
   const getClassName=function(isActive)
@@ -27,6 +28,7 @@ function App() {
         <NavLink to="/" className={({isActive})=>{return getClassName(isActive);}}>Homepage</NavLink>
         <NavLink to="/about" className={({isActive})=>{return getClassName(isActive);}}>About</NavLink>
         <NavLink to="/contact" className={({isActive})=>{return getClassName(isActive);}}>Contact</NavLink>
+        <NavLink to="/control" className={({isActive})=>{return getClassName(isActive);}}>Control</NavLink>
       </nav>
     </header>
     <Routes>
@@ -35,6 +37,7 @@ function App() {
       <Route path="/contact" element={<Contact />}/>
       <Route path="/:type"  element={<SensorList />}/>
       <Route path="/:type/:sensor/*"  element={<Sensorgraph/>} />
+      <Route path="/control" element={<Control/>}/>
     </Routes>
     </BrowserRouter>
     </>

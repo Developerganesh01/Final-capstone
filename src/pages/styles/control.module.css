@@ -1,0 +1,65 @@
+.control-container{
+  margin:0.5rem;
+  margin-top: 2rem;
+  width: 98vw;
+  min-height: 85vh;
+  /* border: 0.2rem solid black; */
+  display: flex;
+}
+.control-switch{
+  width: 15rem;
+  height: 5rem;
+}
+.control-switch input[type="checkbox"]{
+ display: none;
+}
+.control-switch label{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 0.2rem solid #ccc;;
+  cursor: pointer;
+  border-radius: 2rem;
+  text-align: center;
+  position: relative;
+  background-color: #999;
+  transition: all 0.2s;
+  padding: 2rem;
+}
+.control-switch input[type="checkbox"]:checked + label{ 
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+}
+.control-switch label::after{
+  content:"OFF ❌";
+  position:absolute;
+  left: 0.5rem;
+  top: 0;
+  width: 30%;
+  height: 80%;
+  border: 0.3rem solid white;
+  border-radius: 50rem;
+  background-color: #fff;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2rem;
+}
+.control-switch input[type="checkbox"]:checked + label::after{ 
+  left:calc(100% - 30% - 10px);
+  content: "ON ✔️";
+}
+
+
+.control-unit--01 , .control-unit--02 , .control-unit--03{
+  margin: 1rem;
+  border: 0.2rem solid black;
+  width: 30%;
+  min-height:30vh;
+  display: flex;
+  justify-content: end;
+  padding: 1rem;
+}
