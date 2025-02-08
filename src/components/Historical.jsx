@@ -2,12 +2,14 @@ import { useEffect,useState } from "react";
 import styles from "./HistoricalData.module.css";
 import HistoricalGraph from "./HistoricalGraph";
 import {v4 as uuidv4} from "uuid";
+import { useParams } from "react-router-dom";
 function Historical()
 {
   const[sensorDataList,setSensorDataList]=useState([]);
   const [startDate,setStartDate]=useState("");
   const[endDate,setEndDate]=useState("");
-  
+  const params=useParams();
+  const type=params.sensor;
   useEffect(()=>{
     const now = new Date();
     const year = now.getFullYear();
@@ -25,7 +27,7 @@ function Historical()
   async function getData(sd,ed)
   {
     try{
-      const response=await fetch(`${process.env.REACT_APP_CAPSTONEBACKEDNBASEURL}/ph-sensor/gethistoricaldata`,{
+      const response=await fetch(`${process.env.REACT_APP_CAPSTONEBACKEDNBASEURL}/${type}/gethistoricaldata`,{
         method:"POST",
         headers:{
           'Content-Type':'application/json'

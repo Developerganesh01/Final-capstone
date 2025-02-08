@@ -15,7 +15,9 @@ export default function Sensor({firebaseRTDBPath})
       if(sensorValue !== newValue)
       {
         setMsg(`${firebaseRTDBPath} value changed from ${sensorValue} to ${newValue}`)
-        setSensorValue(newValue);
+        setSensorValue(()=>{
+          setSensorValue(newValue);
+        });
         setTimeout(()=>{
           setMsg(null);
         },1000)
@@ -24,7 +26,7 @@ export default function Sensor({firebaseRTDBPath})
     return () => {
       off(sensorRef);
     };
-  }, []); 
+  }, [sensorValue]); 
   return (
   <>
   <div className={styles.sensordetailbox}>

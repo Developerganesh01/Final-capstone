@@ -1,6 +1,15 @@
 [
   {
-    "href": "bh1750-sensor",
+    "href": "ldr_analog",
+    "title": "LDR Sensor",
+    "description": "Measures the resistance of the light-dependent resistor",
+    "valueId": "ldr-value",
+    "dataAttribute": "ldr-sensor",
+    "dataValue": "View LDR Sensor's Data",
+    "collection":"ldrmodels"
+  },
+  {
+    "href": "light_intensity_bh1750",
     "title": "BH1750 (GY-30) Sensor",
     "description": "Measures ambient light intensity",
     "valueId": "bh1750-value",
@@ -9,12 +18,6 @@
     "collection":"phmodels"
   },
   {
-    "href": "ldr-sensor",
-    "title": "LDR Sensor",
-    "description": "Measures the resistance of the light-dependent resistor",
-    "valueId": "ldr-value",
-    "dataAttribute": "ldr-sensor",
-    "dataValue": "View LDR Sensor's Data",
-    "collection":"ldrmodels"
+    "href":"light_intensity_tsl2591"
   }
 ]
