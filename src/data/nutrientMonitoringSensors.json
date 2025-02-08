@@ -1,6 +1,6 @@
 [
   {
-    "href": "ph-sensor",
+    "href": "ph_sensor",
     "title": "PH Sensor",
     "description": "Used to measure the acidity or alkalinity...",
     "valueId": "ph-value",
@@ -9,7 +9,7 @@
     "collection":"phmodels"
   },
   {
-    "href": "tds-sensor",
+    "href": "tds_sensor",
     "title": "TDS Sensor",
     "description": "Measures the total dissolved solids in water with a range of 0 to 1000 ppm.",
     "valueId": "tds-value",
