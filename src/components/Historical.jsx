@@ -17,11 +17,13 @@ function Historical()
     const day = String(now.getDate()).padStart(2, '0');
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
-    const tempStartDate=`${year}-${month}-${day}T${hours}:00`;
-    const tempEndDate=`${year}-${month}-${day}T${hours}:${minutes}`;
+    let tempStartDate=`${year}-${month}-${day}T${hours}:00`;
+    let tempEndDate=`${year}-${month}-${day}T${hours}:${minutes}`;
+    // tempStartDate=new Date(tempStartDate).toISOString();
+    // tempEndDate=new Date(tempEndDate).toISOString();
     setEndDate(tempEndDate);
     setStartDate(tempStartDate);
-    getData(tempStartDate,tempEndDate);
+    getData(new Date(tempStartDate).toISOString(),new Date(tempEndDate).toISOString());
   },[]);
 
   async function getData(sd,ed)
@@ -48,10 +50,10 @@ function Historical()
   function handleFetch()
   {
     try{
-      new Date(startDate);
-      new Date(endDate);
+      // new Date(startDate);
+      // new Date(endDate);
       //dates are valid
-      getData(startDate,endDate);
+      getData(new Date(startDate).toISOString(),new Date(endDate).toISOString());
     }catch(err)
     {
       console.log(err);
