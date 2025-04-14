@@ -3,7 +3,7 @@ import styles from "../pages/styles/sensorList.module.css";
 import db  from "../firebase";
 import {ref,onValue,off } from "firebase/database";
 
-export default function Sensor({firebaseRTDBPath})
+export default function Sensor({firebaseRTDBPath,output})
 {
   //e.g. firbaseRTDBPath=ph-sensor 
   const [sensorValue, setSensorValue] = useState('Fetching...');
@@ -33,7 +33,7 @@ export default function Sensor({firebaseRTDBPath})
    <div className={msg?`${styles.show}`:`${styles.hide}`}>{msg}</div>
     <div className={styles.sensorheadingbox}>{firebaseRTDBPath}</div>
     <div className={styles.sensorvaluebox}>
-      <p>value : {sensorValue}</p>
+      <p>{output==0?"value":"status"} : {sensorValue}</p>
     </div>
   </div>
   </>

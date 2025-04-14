@@ -36,11 +36,11 @@ export default function SensorList()
          return(
           item.output?
           <div className={styles.sensorcontainer}>
-            <Sensor firebaseRTDBPath={item.href} />
+            <Sensor firebaseRTDBPath={item.href} output="1" />
          </div>
          :<div className={styles.sensorcontainer} key={ct}>
             <Link to={`/${params.type}/${item.href}/live`}>
-              <Sensor firebaseRTDBPath={item.href} />
+              <Sensor firebaseRTDBPath={item.href} output="0"/>
             </Link>
          </div>);
       });

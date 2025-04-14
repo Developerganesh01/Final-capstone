@@ -9,6 +9,7 @@ import Sensorgraph from './pages/Sensorgraph';
 import Control from "./pages/Control";
 
 function App() {
+  const types=['Nutrient-dosing ','grow-light ','Environment'];
   const getClassName=function(isActive)
   {
     if(isActive)
@@ -25,6 +26,16 @@ function App() {
     <BrowserRouter>
     <header>
       <nav className={styles.navheader}>
+        
+      {types.map((type) => (
+        <NavLink
+          key={type}
+          to={`/${type}`} // URL-safe path
+          className={({ isActive }) => getClassName(isActive)}
+        >
+          {type}
+        </NavLink>
+      ))}
         <NavLink to="/" className={({isActive})=>{return getClassName(isActive);}}>Homepage</NavLink>
         <NavLink to="/about" className={({isActive})=>{return getClassName(isActive);}}>About</NavLink>
         <NavLink to="/contact" className={({isActive})=>{return getClassName(isActive);}}>Contact</NavLink>
