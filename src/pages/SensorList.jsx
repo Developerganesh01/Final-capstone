@@ -33,7 +33,12 @@ export default function SensorList()
        const newlist=list.default.map(item=>
        {
         ct=ct+1;
-         return(<div className={styles.sensorcontainer} key={ct}>
+         return(
+          item.output?
+          <div className={styles.sensorcontainer}>
+            <Sensor firebaseRTDBPath={item.href} />
+         </div>
+         :<div className={styles.sensorcontainer} key={ct}>
             <Link to={`/${params.type}/${item.href}/live`}>
               <Sensor firebaseRTDBPath={item.href} />
             </Link>

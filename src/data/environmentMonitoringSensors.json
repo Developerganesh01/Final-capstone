@@ -31,5 +31,22 @@
   },
   {
     "href":"dht_humidity_sensor"
+  },
+  {
+    "href":"indoor_cooling_system",
+    "output":"1"
+  },
+  {
+    "href":"exhaust_fan",
+    "output":1
+  },
+  {
+    "href":"oled_module_ems",
+    "output":1
+  },
+  {
+    "href":"diaphragm_pump",
+    "output":1
   }
+
 ]
